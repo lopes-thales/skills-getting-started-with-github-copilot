@@ -28,6 +28,42 @@ activities = {
         "participants": ["michael@mergington.edu", "daniel@mergington.edu"]
     },
     "Programming Class": {
+        "Drama Club": {
+            "description": "Perform in theatrical productions and develop acting skills",
+            "schedule": "Wednesdays, 4:00 PM - 5:30 PM",
+            "max_participants": 25,
+            "participants": ["alex@mergington.edu"]
+            },
+            "Art Class": {
+            "description": "Explore various art mediums and techniques",
+            "schedule": "Mondays and Thursdays, 3:30 PM - 4:30 PM",
+            "max_participants": 18,
+            "participants": ["isabella@mergington.edu"]
+            },
+            "Soccer Team": {
+            "description": "Compete in soccer matches and build teamwork",
+            "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
+            "max_participants": 22,
+            "participants": ["james@mergington.edu", "lucas@mergington.edu"]
+            },
+            "Basketball Team": {
+            "description": "Play competitive basketball and develop athletic skills",
+            "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
+            "max_participants": 15,
+            "participants": ["ryan@mergington.edu"]
+            },
+            "Debate Club": {
+            "description": "Participate in competitive debates and develop argumentation skills",
+            "schedule": "Fridays, 3:30 PM - 5:00 PM",
+            "max_participants": 16,
+            "participants": ["aisha@mergington.edu", "marcus@mergington.edu"]
+            },
+            "Music Ensemble": {
+            "description": "Play instruments and perform in concerts",
+            "schedule": "Tuesdays and Fridays, 3:45 PM - 4:45 PM",
+            "max_participants": 20,
+            "participants": ["sophia@mergington.edu"]
+            },
         "description": "Learn programming fundamentals and build software projects",
         "schedule": "Tuesdays and Thursdays, 3:30 PM - 4:30 PM",
         "max_participants": 20,
@@ -63,5 +99,6 @@ def signup_for_activity(activity_name: str, email: str):
     activity = activities[activity_name]
 
     # Add student
+    if email in activity["participants"]:
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
